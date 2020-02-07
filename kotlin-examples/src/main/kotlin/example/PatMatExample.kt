@@ -48,6 +48,7 @@ fun example3(){
 }
 
 //example 3.5 `when is` but возвращать через AS (возможно inline метод)
+//TODO посмотреть касты с наследованием 
 
 fun example4(any : Any){
     val nullSafe = any as? String // null
