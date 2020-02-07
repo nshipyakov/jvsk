@@ -47,6 +47,8 @@ fun example3(){
     }
 }
 
+//example 3.5 `when is` but возвращать через AS (возможно inline метод)
+
 fun example4(any : Any){
     val nullSafe = any as? String // null
     println(nullSafe)
