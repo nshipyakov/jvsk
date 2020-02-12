@@ -58,6 +58,9 @@ fun example4(any : Any){
     println(res)
 }
 
+
+
 lateinit var date :Date
 lateinit var sqlDate : java.sql.Date // как в java
-lateinit var baseCalendar:  BaseCal // через as в kotlin
+import java.sql.Date as SQLDate
+lateinit var baseCalendar:  SQLDate // через as в kotlin

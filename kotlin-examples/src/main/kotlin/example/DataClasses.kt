@@ -36,4 +36,35 @@ class DataClasses{
             innerString : Collection<T> = ArrayList()
     ) : Collection<T> by innerString
 
+    val text = """Lorem ipsum dolor sit amet, consectetur adipiscing 
+                | elit, sed do eiusmod tempor incididunt ut labore 
+                | et dolore magna aliqua.""".trimMargin()
+
+    sealed class Expr {
+        data class Const(val number: Double) : Expr()
+        data class Sum(val e1: Double, val e2: Expr) : Expr()
+        object NotANumber : Expr()
+
+        fun eval1(expr: Expr) =
+                when (expr) {
+                    is Const -> expr.number
+                    is Sum -> expr.e1
+                    NotANumber -> Double.NaN
+                }
+    }
+    open class Expr2 {
+        data class Const(val number: Double) : Expr2()
+        data class Sum(val e1: Double, val e2: Expr) : Expr2()
+        object NotANumber : Expr2()
+
+        fun eval2(expr: Expr2) =
+                when (expr) {
+                    is Expr2.Const -> expr.number
+                    is Expr2.Sum -> expr.e1
+                    Expr2.NotANumber -> Double.NaN
+                    else -> throw IllegalArgumentException()
+                }
+    }
+
+
 }
