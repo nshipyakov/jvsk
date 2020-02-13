@@ -23,29 +23,29 @@ class ValueWrapper(var value: Any) {
     }
 }
 
-fun example1() {
-    val a = if (Math.random() * 10 > 5) 5 else null
-    val aIntNotNull: Int? = a as Int
-    val aInt: Int? = a as? Int
-}
-
-fun example2() {
-    val obj: Any? = if (Math.random() * 10 > 5) 5 else "String"
-
-    if (obj is String) print(obj.length)
-
-    if (obj !is String) print("Not a String")
-    else print(obj.length)
-}
-
-fun example3(){
-    val x : Any? = null
-    when (x) {
-        is Int -> print(x + 1)
-        is String -> print(x.length + 1)
-        is IntArray -> print(x.sum())
-    }
-}
+//fun example1() {
+//    val a = if (Math.random() * 10 > 5) 5 else null
+//    val aIntNotNull: Int? = a as Int
+//    val aInt: Int? = a as? Int
+//}
+//
+//fun example2() {
+//    val obj: Any? = if (Math.random() * 10 > 5) 5 else "String"
+//
+//    if (obj is String) print(obj.length)
+//
+//    if (obj !is String) print("Not a String")
+//    else print(obj.length)
+//}
+//
+//fun example3(){
+//    val x : Any? = null
+//    when (x) {
+//        is Int -> print(x + 1)
+//        is String -> print(x.length + 1)
+//        is IntArray -> print(x.sum())
+//    }
+//}
 
 //example 3.5 `when is` but возвращать через AS (возможно inline метод)
 //TODO посмотреть касты с наследованием 
@@ -60,7 +60,7 @@ fun example4(any : Any){
 
 
 
-lateinit var date :Date
-lateinit var sqlDate : java.sql.Date // как в java
-import java.sql.Date as SQLDate
-lateinit var baseCalendar:  SQLDate // через as в kotlin
+//lateinit var date :Date
+//lateinit var sqlDate : java.sql.Date // как в java
+//import java.sql.Date as SQLDate
+//lateinit var baseCalendar:  SQLDate // через as в kotlin

@@ -1,6 +1,16 @@
 
 
+import example.User
 import java.time.LocalDate
+
+fun main() {
+
+    val user = User().apply {
+        age = 19
+    }
+    print(user.isAdult())
+
+}
 
 class KotlinExtension {
 
@@ -14,6 +24,7 @@ class KotlinExtension {
         println("Simple String".myHello())
     }
 
+    fun User.isAdult() = this.age >= 18
 
 
     class ClassWith2Field(val one: String, val two: String)

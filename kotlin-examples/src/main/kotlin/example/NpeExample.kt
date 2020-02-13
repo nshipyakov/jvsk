@@ -9,11 +9,10 @@ private fun example1() {
     // Так не скомпиллится и это здорово
     // print(result.length)
     // Надо так
-    print(result?.length)
+    //print(result?.length)
     // Но
+
     val resultFromJava = NpeExample.getResult()
-    // Предупреждения нет, хотя getResult() null возвращает
-    // Платформенные типы котлин не проверяет. Строка ниже вывалит NPE
     print(resultFromJava.length)
 }
 
