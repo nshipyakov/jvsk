@@ -1,5 +1,8 @@
 package examples;
 
+import examples.beans.Printer;
+import examples.beans.Xerox;
+
 public class PatMatExample1 {
 
     public static void main(String[] args) {
@@ -32,10 +35,12 @@ public class PatMatExample1 {
     }
 
     private static void example3() {
+
         Object obj = "value";
         if (obj instanceof String sw && sw.length() == 5) {
             System.out.println("Работает");
         }
+
     }
 
     private static void example4() {
@@ -63,12 +68,13 @@ public class PatMatExample1 {
     }
 
     private static void example7() {
+
         Object obj = "value";
-        // Интересный кейс
         if (!(obj instanceof String str)) {
             throw new RuntimeException("incorrect type");
         }
         System.out.println(str.length());
+
     }
 
     private static void example8() {
@@ -87,17 +93,20 @@ public class PatMatExample1 {
 
     private static void example9() {
         // Еще одна причина почему используется доп переменная
-        SomeWrapper sw = new OtherWrapper("other");
-        if(sw instanceof OtherWrapper) {
-            sw.showText();
-            // Выводится Some wrapper. Если бы сделали приведение к OtherWrapper
-            // то вдруг стал выводится Other wrapper
-            // Это ломает обратную совметсиомть
+
+        Printer printer = getPrinter();
+        if(printer instanceof Xerox p) {
+            p.print();
         }
-        if(sw instanceof OtherWrapper ow) {
-            ow.showText();
-            // Тут выведется Other wrapper
-        }
+
+        // Выводится Some wrapper. Если бы сделали приведение к OtherWrapper
+        // то вдруг стал выводится Other wrapper
+        // Это ломает обратную совметсиомть
+
+    }
+
+    private static Printer getPrinter() {
+        return new Xerox();
     }
 
     private void example10() {
