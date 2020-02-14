@@ -5,9 +5,9 @@ public class User {
     private String name;
     private Integer age;
 
-    public Boolean isAdult() {
-        return age >= 21;
-    }
+//    public Boolean isAdult() {
+//        return age >= 21;
+//    }
 
     public String getName() {
         return name;

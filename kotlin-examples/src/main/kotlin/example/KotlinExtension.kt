@@ -24,9 +24,6 @@ class KotlinExtension {
         println("Simple String".myHello())
     }
 
-    fun User.isAdult() = this.age >= 18
-
-
     class ClassWith2Field(val one: String, val two: String)
 
 
@@ -37,3 +34,5 @@ class KotlinExtension {
         print(it.minDate)
     }
 }
+
+fun User.isAdult() = this.age >= 18
